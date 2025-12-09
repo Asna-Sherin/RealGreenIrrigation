@@ -66,6 +66,18 @@ public void checkcount1() throws InterruptedException {
 public void TestWishList() throws InterruptedException {
 	prod.wishlist();
 }
+@Test()
+public void lefarrow() throws InterruptedException  {
+	prod.carousel();
+}
+@Test()
+public void testrightarrow() throws InterruptedException {
+	prod.rightarrow();
+}
+@Test()
+public void testimg() throws InterruptedException {
+	prod.image();
+}
   @AfterMethod
   public void afterMethod() {
   }

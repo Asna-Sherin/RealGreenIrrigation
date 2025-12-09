@@ -32,6 +32,9 @@ public class Productpage {
 	By wishlisticon=By.xpath("/html/body/div[2]/div[6]/div/div/div[1]/div[2]/div/div/div/div[1]/div/div[1]/div[2]/ul/li[3]/a");
 	By viewwishlistbutton=By.linkText("View Wishlist");
 	By wishlistsuccessmessage=By.xpath("//*[@id=\"wishlist-product-name\"]");
+	By prodtitle=By.cssSelector(".product-title");
+	By leftarrow=By.xpath("/html/body/div[2]/div[6]/div/button[1]");
+	By rightarrow=By.xpath("/html/body/div[2]/div[6]/div/button[2]");
 	public void modalopen() {
 		Assert.assertTrue(driver.findElement(modal).isDisplayed());
 	}
@@ -297,4 +300,210 @@ Thread.sleep(4000);
 		soft.assertAll();
 
 }
+    
+    
+    //verify carousel inside each product category
+    
+    public void carousel() throws InterruptedException {
+    	SoftAssert soft=new SoftAssert();
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+    	Actions act=new Actions(driver);
+    	WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+
+    	List<WebElement>card=driver.findElements(cards);
+    	List<WebElement>catname=driver.findElements(categoryName);
+		int count=driver.findElements(cards).size();
+
+    	for(int i=0;i<count;i++) {
+    		List<WebElement>freshcard=driver.findElements(cards);
+        	List<WebElement>freshcatname=driver.findElements(categoryName);
+    	WebElement firstcard=freshcard.get(i);
+    	WebElement firstcatname=freshcatname.get(i);
+    	wait.until(ExpectedConditions.elementToBeClickable(firstcatname));
+    	System.out.println("clicking category:"+firstcatname.getText());
+    	js.executeScript("arguments[0].click();",firstcatname);
+    	wait.until(ExpectedConditions.visibilityOf(driver.findElement(productinsidecat)));
+    	Thread.sleep(3000);
+    	List<WebElement>prods=driver.findElements(productinsidecat);
+
+    	int prodcount=driver.findElements(productinsidecat).size();
+    	for(int j=0;j<prodcount;j++) {
+    		//reintialize
+    		prods=driver.findElements(productinsidecat);
+    		WebElement prod=prods.get(j);
+    		act.moveToElement(prod).perform();
+    		Thread.sleep(5000);
+    		WebElement title=driver.findElement(prodtitle);
+    		title.click();
+    		JavascriptExecutor js1 = (JavascriptExecutor) driver;
+
+    		js.executeScript("window.scrollBy(0,300)");
+    		WebElement list = driver.findElement(By.id("relatedProductsList"));
+
+    		// scroll value before click
+    		int before = ((Number) js.executeScript("return arguments[0].scrollLeft;", list)).intValue();
+
+    		// click left arrow
+    		Thread.sleep(3000);
+    		driver.findElement(leftarrow).click();
+    		Thread.sleep(500);
+
+    		// scroll value after click
+    		int after = ((Number) js.executeScript("return arguments[0].scrollLeft;", list)).intValue();
+
+    		// check movement
+    		if (before != after) {
+    		    System.out.println("Left arrow works");
+    		} else {
+    		    System.out.println("Left arrow NOT working");
+    		}
+        	driver.navigate().back();
+        	Thread.sleep(3000);
+    }
+    	driver.navigate().back();
+    	driver.findElement(By.xpath("//*[@id=\"productsMenu\"]")).click();
+
+}    	
+    soft.assertAll();
+    }
+    public void rightarrow() throws InterruptedException {
+    	SoftAssert soft=new SoftAssert();
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+    	Actions act=new Actions(driver);
+    	WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+
+    	List<WebElement>card=driver.findElements(cards);
+    	List<WebElement>catname=driver.findElements(categoryName);
+		int count=driver.findElements(cards).size();
+
+    	for(int i=0;i<count;i++) {
+    		List<WebElement>freshcard=driver.findElements(cards);
+        	List<WebElement>freshcatname=driver.findElements(categoryName);
+    	WebElement firstcard=freshcard.get(i);
+    	WebElement firstcatname=freshcatname.get(i);
+    	wait.until(ExpectedConditions.elementToBeClickable(firstcatname));
+    	System.out.println("clicking category:"+firstcatname.getText());
+    	js.executeScript("arguments[0].click();",firstcatname);
+    	wait.until(ExpectedConditions.visibilityOf(driver.findElement(productinsidecat)));
+    	Thread.sleep(3000);
+    	List<WebElement>prods=driver.findElements(productinsidecat);
+
+    	int prodcount=driver.findElements(productinsidecat).size();
+    	for(int j=0;j<prodcount;j++) {
+    		//reintialize
+    		prods=driver.findElements(productinsidecat);
+    		WebElement prod=prods.get(j);
+    		act.moveToElement(prod).perform();
+    		Thread.sleep(5000);
+    		WebElement title=driver.findElement(prodtitle);
+    		title.click();
+    		JavascriptExecutor js1 = (JavascriptExecutor) driver;
+
+    		js.executeScript("window.scrollBy(0,300)");
+    		WebElement list = driver.findElement(By.id("relatedProductsList"));
+
+    		// scroll value before click
+    		int before = ((Number) js.executeScript("return arguments[0].scrollLeft;", list)).intValue();
+
+    		// click left arrow
+    		Thread.sleep(3000);
+    		driver.findElement(rightarrow).click();
+    		Thread.sleep(500);
+
+    		// scroll value after click
+    		int after = ((Number) js.executeScript("return arguments[0].scrollLeft;", list)).intValue();
+
+    		// check movement
+    		if (before != after) {
+    		    System.out.println("Right arrow works");
+    		} else {
+    		    System.out.println("Right arrow NOT working");
+    		}
+        	driver.navigate().back();
+        	Thread.sleep(3000);
+    }
+    	driver.navigate().back();
+    	driver.findElement(By.xpath("//*[@id=\"productsMenu\"]")).click();
+
+}    	
+    soft.assertAll();
+
+    }
+    
+    
+    
+    //verify the images
+    
+    
+    public void image() throws InterruptedException {
+    	SoftAssert soft=new SoftAssert();
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+    	Actions act=new Actions(driver);
+    	WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+
+    	List<WebElement>card=driver.findElements(cards);
+    	List<WebElement>catname=driver.findElements(categoryName);
+		int count=driver.findElements(cards).size();
+
+    	for(int i=0;i<count;i++) {
+    		List<WebElement>freshcard=driver.findElements(cards);
+        	List<WebElement>freshcatname=driver.findElements(categoryName);
+    	WebElement firstcard=freshcard.get(i);
+    	WebElement firstcatname=freshcatname.get(i);
+    	wait.until(ExpectedConditions.elementToBeClickable(firstcatname));
+    	System.out.println("clicking category:"+firstcatname.getText());
+    	js.executeScript("arguments[0].click();",firstcatname);
+    	wait.until(ExpectedConditions.visibilityOf(driver.findElement(productinsidecat)));
+    	Thread.sleep(3000);
+    	List<WebElement>prods=driver.findElements(productinsidecat);
+
+    	int prodcount=driver.findElements(productinsidecat).size();
+    	for(int j=0;j<prodcount;j++) {
+    		//reintialize
+    		prods=driver.findElements(productinsidecat);
+    		WebElement prod=prods.get(j);
+    		act.moveToElement(prod).perform();
+    		Thread.sleep(5000);
+    		WebElement title=driver.findElement(prodtitle);
+    		title.click();
+    		JavascriptExecutor js1 = (JavascriptExecutor) driver;
+
+    		js.executeScript("window.scrollBy(0,300)");
+    		List<WebElement> products = driver.findElements(By.cssSelector(".related-product-item"));
+
+    		for (WebElement product : products) {
+    		    WebElement img = product.findElement(By.tagName("img"));
+    		    String productName = product.findElement(By.tagName("h4")).getText();
+    		    String src = img.getAttribute("src").toLowerCase();
+
+    		    Boolean isValidImage = (Boolean) js.executeScript(
+    		        "return arguments[0].complete && " +
+    		        "typeof arguments[0].naturalWidth != 'undefined' && " +
+    		        "arguments[0].naturalWidth > 50 && arguments[0].naturalHeight > 50;",
+    		        img
+    		    );
+
+    		    // Check if it is a placeholder image based on URL
+    		    Boolean isPlaceholder =
+    		            src.contains("first_image") ||
+    		            src.contains("default") ||
+    		            src.contains("placeholder") ||
+    		            src.contains("noimage");
+
+    		    if (!isValidImage || isPlaceholder) {
+    		        System.out.println("❌ Incorrect image detected for: " + productName + " | src = " + src);
+    		    } else {
+    		        System.out.println("✅ Proper image found for: " + productName);
+    		    }
+    		
+    		   
+    		}
+    		 driver.navigate().back();
+         	Thread.sleep(3000);
+    	}
+    		driver.navigate().back();
+        	driver.findElement(By.xpath("//*[@id=\"productsMenu\"]")).click();
+    }
+    	soft.assertAll();
 }
+    }

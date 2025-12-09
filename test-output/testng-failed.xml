@@ -6,8 +6,8 @@
       <class name="Frontendtest.ProductTest">
         <methods>
           <include name="beforeMethod"/>
+          <include name="testimg"/>
           <include name="afterMethod"/>
-          <include name="TestWishList"/>
         </methods>
       </class> <!-- Frontendtest.ProductTest -->
     </classes>

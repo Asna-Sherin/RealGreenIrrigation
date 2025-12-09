@@ -57,16 +57,16 @@ public class BaseClass {
 			driver.manage().window().maximize();
 			driver.get("https://riyoceline.com/projects/green/");
 			Thread.sleep(5000);
-			WebElement element=driver.findElement(By.xpath("//*[@id=\"userDropdown\"]"));
-			element.click();
-			WebElement login=driver.findElement(By.className("dropdown-item"));
-			login.click();
-
-	    	driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("asna@gmail.com");
-			driver.findElement(By.xpath("//*[@id=\"passwordField\"]")).sendKeys("~!@#$%^&*()_+~");
-			driver.findElement(By.xpath("/html/body/div[2]/div[6]/div/div[2]/div/div/form/div[2]/div[1]/button")).click();
-			Thread.sleep(3000);
-
+//			WebElement element=driver.findElement(By.xpath("//*[@id=\"userDropdown\"]"));
+//			element.click();
+//			WebElement login=driver.findElement(By.className("dropdown-item"));
+//			login.click();
+//
+//	    	driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("asna@gmail.com");
+//			driver.findElement(By.xpath("//*[@id=\"passwordField\"]")).sendKeys("~!@#$%^&*()_+~");
+//			driver.findElement(By.xpath("/html/body/div[2]/div[6]/div/div[2]/div/div/form/div[2]/div[1]/button")).click();
+//			Thread.sleep(3000);
+//
 			WebElement product=driver.findElement(By.xpath("//*[@id=\"productsMenu\"]"));
 			product.click();
 			Thread.sleep(3000);

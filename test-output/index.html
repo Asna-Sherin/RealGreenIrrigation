@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-skipped">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--877979589\testng-customsuite.xml</span>
+                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--2066589135\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Frontendtest.ProductTest" class="method navigator-link" hash-for-method="TestWishList">TestWishList</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Frontendtest.ProductTest" class="method navigator-link" hash-for-method="testimg">testimg</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,26 +118,26 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-skipped">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
+              <img src="failed.png"/>
               <span class="class-name">Frontendtest.ProductTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TestWishList">
-                  </a> <!-- TestWishList -->
-                  <span class="method-name">TestWishList</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
+                  <a name="testimg">
+                  </a> <!-- testimg -->
+                  <span class="method-name">testimg</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;productsMenu&quot;]&quot;}
   (Session info: chrome=142.0.7444.177)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [81ce421f8b06b6b08f6cce2f6e0ea0d9, findElement {using=xpath, value=//*[@id=&quot;userDropdown&quot;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63132}, goog:processID: 9132, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63132/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 81ce421f8b06b6b08f6cce2f6e0ea0d9
+Command: [4a73eb6bacf61fd36006a96deb8de34d, findElement {using=xpath, value=//*[@id=&quot;productsMenu&quot;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62898}, goog:processID: 8644, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62898/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4a73eb6bacf61fd36006a96deb8de34d
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -152,16 +152,12 @@ Session ID: 81ce421f8b06b6b08f6cce2f6e0ea0d9
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at Utilities.BaseClass.productsetup(BaseClass.java:60)
-	at Frontendtest.ProductTest.beforeMethod(ProductTest.java:52)
+	at Frontend.Productpage.image(Productpage.java:505)
+	at Frontendtest.ProductTest.testimg(ProductTest.java:79)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
@@ -189,11 +185,11 @@ Session ID: 81ce421f8b06b6b08f6cce2f6e0ea0d9
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-skipped -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--877979589\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--2066589135\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -204,7 +200,7 @@ Session ID: 81ce421f8b06b6b08f6cce2f6e0ea0d9
     &lt;classes&gt;
       &lt;class name=&quot;Frontendtest.ProductTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;TestWishList&quot;/&gt;
+          &lt;include name=&quot;testimg&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- Frontendtest.ProductTest --&gt;
     &lt;/classes&gt;
@@ -248,14 +244,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TestWishList')
+data.setCell(0, 1, 'testimg')
 data.setCell(0, 2, 'Frontendtest.ProductTest')
-data.setCell(0, 3, 1);
+data.setCell(0, 3, 147158);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 ms</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -270,27 +266,33 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">8 ignored methods</span>
+            <span class="header-content">11 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">Frontendtest.ProductTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">countprodinsidecategory</span>
+                <br/>
+                <span class="ignored-method-name">clickXbutton</span>
+                <br/>
+                <span class="ignored-method-name">testmodalopens</span>
+                <br/>
+                <span class="ignored-method-name">lefarrow</span>
+                <br/>
                 <span class="ignored-method-name">countofcards</span>
                 <br/>
                 <span class="ignored-method-name">checkcount1</span>
                 <br/>
-                <span class="ignored-method-name">checkcount</span>
+                <span class="ignored-method-name">testrightarrow</span>
                 <br/>
-                <span class="ignored-method-name">countprodinsidecategory</span>
-                <br/>
-                <span class="ignored-method-name">testmodalopens</span>
+                <span class="ignored-method-name">TestWishList</span>
                 <br/>
                 <span class="ignored-method-name">click</span>
                 <br/>
-                <span class="ignored-method-name">clickXbutton</span>
-                <br/>
                 <span class="ignored-method-name">verifycategories</span>
+                <br/>
+                <span class="ignored-method-name">checkcount</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -304,11 +306,19 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">Frontendtest.ProductTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">beforeMethod</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testimg</span>
+                <span class="method-start">20156 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">167325 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
